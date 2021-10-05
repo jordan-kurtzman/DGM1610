@@ -12,6 +12,7 @@ public class PlayerControl : MonoBehaviour
     public float yRange = 7f;
 
     public GameObject projectile;
+    public Transform launcher;
     public Vector3 offset = new Vector3(0,1,0);
 
     // public float health
@@ -49,7 +50,7 @@ public class PlayerControl : MonoBehaviour
     
        if(Input.GetKeyDown(KeyCode.Space))
        {
-           Instantiate(projectile, transform.position + offset, projectile.transform.rotation);
+           Instantiate(projectile, launcher.transform.position, launcher.transform.rotation);
        }
     }
 }
