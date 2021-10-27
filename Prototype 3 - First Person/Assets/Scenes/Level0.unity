@@ -146,7 +146,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 20390836}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.46000004, y: 1.75, z: 0.4699999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -154,8 +154,8 @@ Transform:
   - {fileID: 956533060}
   - {fileID: 994059661}
   - {fileID: 362352422}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 72602778}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &60047802
 GameObject:
@@ -273,6 +273,8 @@ Transform:
   - {fileID: 1376288511}
   - {fileID: 884112689}
   - {fileID: 960906456}
+  - {fileID: 20390837}
+  - {fileID: 1898796439}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1205,6 +1207,7 @@ GameObject:
   - component: {fileID: 1376288515}
   - component: {fileID: 1376288514}
   - component: {fileID: 1376288513}
+  - component: {fileID: 1376288519}
   - component: {fileID: 1376288512}
   - component: {fileID: 1376288516}
   - component: {fileID: 1376288517}
@@ -1324,6 +1327,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpForce: 5
+  curHp: 10
+  maxHp: 10
   lookSensitivity: 5
   maxLookX: 45
   minLookX: -45
@@ -1344,8 +1349,8 @@ MonoBehaviour:
   curAmmo: 10
   maxAmmo: 10
   infiniteAmmo: 0
-  bulletSpeed: 20
-  shootRate: 1
+  bulletSpeed: 10
+  shootRate: 0.3
 --- !u!114 &1376288518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1360,6 +1365,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objPrefab: {fileID: 5184534766875075040, guid: c980a44ca3ce247f8aa0fadd3b12ee01, type: 3}
   createOnStart: 6
+--- !u!136 &1376288519
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376288510}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1770886478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1604,8 +1623,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1085009862}
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Father: {fileID: 72602778}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1898796440
 Rigidbody:
