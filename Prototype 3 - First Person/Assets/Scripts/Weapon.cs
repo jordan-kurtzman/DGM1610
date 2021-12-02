@@ -14,6 +14,8 @@ public class Weapon : MonoBehaviour
     public float shootRate;
     private float lastShootTime;
     private bool isPlayer;
+    public AudioClip shootSFX;
+    private AudioSource audioSource;
 
     void Awake()
     {
@@ -21,6 +23,8 @@ public class Weapon : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         if(GetComponent<PlayerController>())
             isPlayer = true;
+
+        audioSource = GetComponent<AudioSource>();
 
     }
     public bool CanShoot()
@@ -46,5 +50,12 @@ public class Weapon : MonoBehaviour
         bullet.transform.rotation = muzzle.rotation;
         // add velocity to projectile
         bullet.GetComponent<Rigidbody>().velocity = muzzle.forward * bulletSpeed;
+
+        if(isPlayer)
+        {
+            GameUI.instance.UpdateAmmoText(curAmmo, maxAmmo);
+        }
+
+        audioSource.PlayOneShot(shootSFX);
     }
 }

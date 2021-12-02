@@ -14,6 +14,8 @@ public class Pickup : MonoBehaviour
     private bool bobbingUp;
 
     private Vector3 startPos;
+    public AudioClip pickupSFX;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +48,7 @@ public class Pickup : MonoBehaviour
                 print("Type not accepted");
                 break;
             }
-
+            other.GetComponent<AudioSource>().PlayOneShot(pickupSFX);
             Destroy(gameObject);
 
         }
